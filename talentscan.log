@@ -1,0 +1,293 @@
+2026-03-07 23:35:50,817 | INFO | package: mysql.connector.plugins
+2026-03-07 23:35:50,818 | INFO | plugin_name: caching_sha2_password
+2026-03-07 23:35:50,818 | INFO | AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2026-03-07 23:38:25,439 | INFO | package: mysql.connector.plugins
+2026-03-07 23:38:25,439 | INFO | plugin_name: caching_sha2_password
+2026-03-07 23:38:25,439 | INFO | AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2026-03-07 23:39:02,809 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.199:5000
+2026-03-07 23:39:02,810 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-07 23:39:02,817 | INFO |  * Restarting with stat
+2026-03-07 23:39:03,306 | WARNING |  * Debugger is active!
+2026-03-07 23:39:03,313 | INFO |  * Debugger PIN: 483-507-143
+2026-03-07 23:44:25,411 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.199:5000
+2026-03-07 23:44:25,413 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-07 23:44:25,414 | INFO |  * Restarting with stat
+2026-03-07 23:44:25,983 | WARNING |  * Debugger is active!
+2026-03-07 23:44:25,986 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:35:28,487 | INFO | package: mysql.connector.plugins
+2026-03-08 10:35:28,488 | INFO | plugin_name: caching_sha2_password
+2026-03-08 10:35:28,488 | INFO | AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2026-03-08 10:37:43,894 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.199:5000
+2026-03-08 10:37:43,894 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 10:37:43,899 | INFO |  * Restarting with stat
+2026-03-08 10:37:44,315 | WARNING |  * Debugger is active!
+2026-03-08 10:37:44,323 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:49:51,561 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-08 10:49:51,561 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 10:50:52,562 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-08 10:50:52,563 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 10:50:52,566 | INFO |  * Restarting with stat
+2026-03-08 10:50:53,058 | WARNING |  * Debugger is active!
+2026-03-08 10:50:53,063 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:52:43,371 | INFO |  * Detected change in 'C:\\Users\\Anaya\\OneDrive\\Desktop\\Resume Project\\app.py', reloading
+2026-03-08 10:52:43,608 | INFO |  * Restarting with stat
+2026-03-08 10:52:44,439 | WARNING |  * Debugger is active!
+2026-03-08 10:52:44,445 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:53:01,447 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.199:5000
+2026-03-08 10:53:01,448 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 10:53:01,450 | INFO |  * Restarting with stat
+2026-03-08 10:53:01,908 | WARNING |  * Debugger is active!
+2026-03-08 10:53:01,915 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:58:01,496 | INFO |  * Detected change in 'C:\\Users\\Anaya\\OneDrive\\Desktop\\Resume Project\\app.py', reloading
+2026-03-08 10:58:01,517 | INFO |  * Detected change in 'C:\\Users\\Anaya\\OneDrive\\Desktop\\Resume Project\\app.py', reloading
+2026-03-08 10:58:01,575 | INFO |  * Restarting with stat
+2026-03-08 10:58:01,601 | INFO |  * Restarting with stat
+2026-03-08 10:58:02,058 | WARNING |  * Debugger is active!
+2026-03-08 10:58:02,062 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:58:02,065 | WARNING |  * Debugger is active!
+2026-03-08 10:58:02,069 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:58:04,826 | WARNING |  * Debugger is active!
+2026-03-08 10:58:04,827 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 10:58:05,032 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-08 10:58:05,032 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 10:58:16,021 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.199:5000
+2026-03-08 10:58:16,022 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 10:58:16,025 | INFO |  * Restarting with stat
+2026-03-08 10:58:16,466 | WARNING |  * Debugger is active!
+2026-03-08 10:58:16,471 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 12:12:58,522 | WARNING |  * Debugger is active!
+2026-03-08 12:12:58,526 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 12:12:58,702 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-08 12:12:58,703 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 12:13:04,595 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-08 12:13:04,597 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 12:15:45,901 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2026-03-08 12:15:45,901 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 12:17:18,747 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2026-03-08 12:17:18,748 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 12:20:59,988 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.199:5000
+2026-03-08 12:20:59,988 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 12:20:59,991 | INFO |  * Restarting with stat
+2026-03-08 12:21:00,486 | WARNING |  * Debugger is active!
+2026-03-08 12:21:00,498 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 12:23:18,218 | WARNING |  * Debugger is active!
+2026-03-08 12:23:18,218 | INFO |  * Debugger PIN: 483-507-143
+2026-03-08 12:23:18,347 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-08 12:23:18,347 | INFO | [33mPress CTRL+C to quit[0m
+2026-03-08 12:24:23,969 | INFO | Serving on http://127.0.0.1:5000
+2026-03-08 13:16:10,539 | ERROR | Exception while serving /login
+Traceback (most recent call last):
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Anaya\OneDrive\Desktop\Resume Project\app.py", line 302, in hr_login
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: login.html
+2026-03-08 13:16:15,628 | ERROR | Exception while serving /login
+Traceback (most recent call last):
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Anaya\OneDrive\Desktop\Resume Project\app.py", line 302, in hr_login
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: login.html
+2026-03-08 13:16:16,921 | ERROR | Exception while serving /login
+Traceback (most recent call last):
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Anaya\OneDrive\Desktop\Resume Project\app.py", line 302, in hr_login
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: login.html
+2026-03-08 13:16:30,778 | ERROR | Exception while serving /login
+Traceback (most recent call last):
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Anaya\OneDrive\Desktop\Resume Project\app.py", line 302, in hr_login
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Anaya\AppData\Roaming\Python\Python313\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: login.html
+2026-03-08 13:19:29,389 | INFO | package: mysql.connector.plugins
+2026-03-08 13:19:29,391 | INFO | plugin_name: caching_sha2_password
+2026-03-08 13:19:29,392 | INFO | AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2026-03-08 13:19:29,459 | WARNING | HR login failed: anayakalap03@gmail.com from 127.0.0.1
+2026-03-08 13:29:41,671 | INFO |  * Detected change in 'C:\\Users\\Anaya\\OneDrive\\Desktop\\Resume Project\\app.py', reloading
+2026-03-08 13:29:41,895 | INFO |  * Restarting with stat

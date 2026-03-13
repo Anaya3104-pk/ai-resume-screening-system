@@ -1,0 +1,4 @@
+flask
+flask-wtf
+bcrypt
+mysql-connector-python

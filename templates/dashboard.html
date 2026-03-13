@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TalentScan AI — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green:       #6BBF59;
+    --green-dark:  #4a9e38;
+    --green-light: #e8f5e4;
+    --green-mid:   #c3e8bb;
+    --sidebar-bg:  #1a2e12;
+    --sidebar-w:   230px;
+    --text-dark:   #1a2e12;
+    --text-mid:    #4a6a40;
+    --text-light:  #7aaa6a;
+    --border:      #d8f0d0;
+    --bg:          #f2faf0;
+    --white:       #ffffff;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+  }
+
+  /* ══════════════════════════
+     SIDEBAR
+  ══════════════════════════ */
+  .sidebar {
+    position: fixed; left: 0; top: 0; bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--sidebar-bg);
+    display: flex; flex-direction: column;
+    padding: 0;
+    z-index: 100;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  }
+
+  .sidebar-brand {
+    display: flex; align-items: center; gap: 10px;
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid #2a4420;
+  }
+
+  .s-logo {
+    width: 34px; height: 34px;
+    background: var(--green);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(107,191,89,0.4);
+  }
+
+  .s-logo svg { color: white; }
+
+  .s-brand-text .s-name {
+    font-size: 14px; font-weight: 700;
+    color: #e8f5e4; letter-spacing: -0.2px;
+  }
+
+  .s-brand-text .s-tagline {
+    font-size: 10px; color: #4a7a3a; margin-top: 1px;
+  }
+
+  /* Nav */
+  .sidebar-nav {
+    flex: 1; padding: 16px 12px;
+    display: flex; flex-direction: column; gap: 2px;
+    overflow-y: auto;
+  }
+
+  .nav-section-label {
+    font-size: 9.5px; font-weight: 600;
+    color: #3a5a2e; text-transform: uppercase;
+    letter-spacing: 0.8px; padding: 10px 10px 6px;
+  }
+
+  .nav-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px; border-radius: 9px;
+    font-size: 13px; font-weight: 500;
+    color: #5a8a4a; cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    position: relative;
+  }
+
+  .nav-item:hover { background: #2a4420; color: #b8e8b0; }
+
+  .nav-item.active {
+    background: var(--green);
+    color: white;
+    box-shadow: 0 2px 8px rgba(107,191,89,0.35);
+  }
+
+  .nav-item svg { flex-shrink: 0; width: 16px; height: 16px; }
+
+  .nav-badge {
+    margin-left: auto;
+    background: rgba(255,255,255,0.25);
+    color: white; font-size: 10px; font-weight: 600;
+    padding: 2px 7px; border-radius: 999px;
+  }
+
+  .nav-item:not(.active) .nav-badge {
+    background: #2a4420; color: #6BBF59;
+  }
+
+  /* Sidebar footer */
+  .sidebar-footer {
+    padding: 14px 12px 18px;
+    border-top: 1px solid #2a4420;
+  }
+
+  .user-card {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 10px; border-radius: 9px;
+    background: #22381a; margin-bottom: 8px;
+  }
+
+  .user-av {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--green); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: white;
+  }
+
+  .user-name  { font-size: 12.5px; font-weight: 600; color: #d8f0d0; }
+  .user-email { font-size: 10px; color: #4a7a3a; margin-top: 1px;
+                max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .btn-logout {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 12px; border-radius: 8px;
+    font-size: 12.5px; font-weight: 500;
+    color: #5a8a4a; cursor: pointer;
+    background: none; border: none; width: 100%;
+    transition: background 0.15s, color 0.15s;
+  }
+  .btn-logout:hover { background: rgba(192,57,43,0.12); color: #e57373; }
+
+  /* ══════════════════════════
+     MAIN CONTENT
+  ══════════════════════════ */
+  .main {
+    margin-left: var(--sidebar-w);
+    flex: 1; padding: 28px 32px;
+    min-height: 100vh;
+  }
+
+  /* Top bar */
+  .topbar {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  .topbar-left h1 {
+    font-size: 20px; font-weight: 700;
+    color: var(--text-dark); letter-spacing: -0.3px;
+  }
+
+  .topbar-left p { font-size: 12.5px; color: var(--text-light); margin-top: 3px; }
+
+  .topbar-right { display: flex; align-items: center; gap: 12px; }
+
+  .btn-upload {
+    display: flex; align-items: center; gap: 7px;
+    padding: 9px 18px; background: var(--green);
+    color: white; border: none; border-radius: 9px;
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    box-shadow: 0 3px 10px rgba(107,191,89,0.35);
+    transition: background 0.15s, transform 0.12s;
+  }
+  .btn-upload:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+  .search-box {
+    display: flex; align-items: center; gap: 8px;
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 9px; padding: 8px 13px;
+    transition: border-color 0.18s;
+  }
+  .search-box:focus-within { border-color: var(--green); }
+  .search-box svg { color: var(--text-light); flex-shrink: 0; }
+  .search-box input {
+    border: none; outline: none; background: none;
+    font-family: 'Inter', sans-serif; font-size: 13px;
+    color: var(--text-dark); width: 180px;
+  }
+  .search-box input::placeholder { color: #b0c8a8; }
+
+  /* Flash messages */
+  .flash {
+    padding: 11px 15px; border-radius: 10px;
+    font-size: 12.5px; font-weight: 500;
+    margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+  }
+  .flash.success { background: #e8f5e4; color: #2d6a1f; border: 1px solid #c3e6cb; }
+  .flash.error   { background: #fdecea; color: #c0392b; border: 1px solid #f5c6cb; }
+
+  /* ── STATS CARDS ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+
+  .stat-card:hover { box-shadow: 0 6px 20px rgba(107,191,89,0.12); transform: translateY(-2px); }
+
+  .stat-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--green);
+    border-radius: 0 0 14px 14px;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .stat-card:hover::after { transform: scaleX(1); }
+
+  .stat-top { display: flex; align-items: center; justify-content: space-between; }
+
+  .stat-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .stat-icon svg { color: var(--green); }
+
+  .stat-change {
+    font-size: 11px; font-weight: 600; padding: 3px 8px;
+    border-radius: 999px;
+  }
+  .stat-change.up   { background: #e8f5e4; color: #2d7a1f; }
+  .stat-change.down { background: #fdecea; color: #c0392b; }
+
+  .stat-value {
+    font-size: 28px; font-weight: 700;
+    color: var(--text-dark); margin-top: 14px;
+    letter-spacing: -0.5px; line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px; color: var(--text-light);
+    margin-top: 5px; font-weight: 400;
+  }
+
+  /* ── TWO COLUMN LAYOUT ── */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+  }
+
+  /* ── PANEL ── */
+  .panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid #f0faea;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .panel-title {
+    font-size: 14px; font-weight: 700;
+    color: var(--text-dark); display: flex; align-items: center; gap: 8px;
+  }
+  .panel-title svg { color: var(--green); }
+
+  .panel-action {
+    font-size: 12px; color: var(--green); font-weight: 500;
+    text-decoration: none; cursor: pointer;
+  }
+  .panel-action:hover { text-decoration: underline; }
+
+  /* ── CANDIDATES TABLE ── */
+  .table-wrap { overflow-x: auto; }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  thead th {
+    font-size: 10.5px; font-weight: 600;
+    color: var(--text-light); text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 12px 20px;
+    text-align: left; background: #f8fdf6;
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #f0faea;
+    transition: background 0.12s;
+    cursor: pointer;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #f8fdf6; }
+
+  tbody td { padding: 13px 20px; font-size: 13px; color: var(--text-dark); }
+
+  .candidate-info { display: flex; align-items: center; gap: 11px; }
+
+  .cand-av {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--green-light); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: var(--green-dark);
+    border: 1.5px solid var(--green-mid);
+  }
+
+  .cand-name  { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+  .cand-email { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+
+  /* Score bar */
+  .score-wrap { display: flex; align-items: center; gap: 10px; }
+
+  .score-bar {
+    flex: 1; height: 6px; background: var(--green-light);
+    border-radius: 999px; overflow: hidden; min-width: 60px;
+  }
+
+  .score-fill {
+    height: 100%; border-radius: 999px;
+    background: var(--green);
+    transition: width 0.6s ease;
+  }
+
+  .score-fill.high   { background: #4CAF50; }
+  .score-fill.mid    { background: #FFC107; }
+  .score-fill.low    { background: #F44336; }
+
+  .score-num {
+    font-size: 12px; font-weight: 700;
+    color: var(--text-dark); min-width: 32px; text-align: right;
+  }
+
+  /* Status badge */
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 600;
+  }
+  .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .badge.shortlisted { background: #e8f5e4; color: #2d7a1f; }
+  .badge.reviewing   { background: #fff3cd; color: #856404; }
+  .badge.rejected    { background: #fdecea; color: #c0392b; }
+  .badge.new         { background: #e3f2fd; color: #1565c0; }
+
+  /* ── RIGHT COLUMN ── */
+  .right-col { display: flex; flex-direction: column; gap: 18px; }
+
+  /* Job roles panel */
+  .job-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 20px;
+    border-bottom: 1px solid #f0faea;
+    transition: background 0.12s; cursor: pointer;
+  }
+  .job-item:last-child { border-bottom: none; }
+  .job-item:hover { background: #f8fdf6; }
+
+  .job-icon {
+    width: 36px; height: 36px; border-radius: 9px;
+    background: var(--green-light); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .job-icon svg { color: var(--green); }
+
+  .job-title  { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+  .job-count  { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+  .job-right  { margin-left: auto; text-align: right; }
+  .job-score  { font-size: 13px; font-weight: 700; color: var(--green); }
+  .job-label  { font-size: 10px; color: var(--text-light); }
+
+  /* Activity feed */
+  .activity-item {
+    display: flex; align-items: flex-start; gap: 11px;
+    padding: 12px 20px; border-bottom: 1px solid #f0faea;
+  }
+  .activity-item:last-child { border-bottom: none; }
+
+  .act-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green); flex-shrink: 0; margin-top: 4px;
+  }
+  .act-dot.yellow { background: #FFC107; }
+  .act-dot.red    { background: #F44336; }
+  .act-dot.blue   { background: #2196F3; }
+
+  .act-text { font-size: 12.5px; color: var(--text-dark); line-height: 1.4; }
+  .act-time { font-size: 10.5px; color: var(--text-light); margin-top: 3px; }
+
+  /* Empty state */
+  .empty-state {
+    text-align: center; padding: 40px 20px;
+    color: var(--text-light);
+  }
+  .empty-state svg { color: var(--green-mid); margin-bottom: 12px; }
+  .empty-state p { font-size: 13px; }
+  .empty-state small { font-size: 11.5px; color: #b0c8a8; margin-top: 4px; display: block; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════
+     SIDEBAR
+══════════════════════════ -->
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="s-logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    </div>
+    <div class="s-brand-text">
+      <div class="s-name">TalentScan AI</div>
+      <div class="s-tagline">HR Intelligence Platform</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Main</div>
+
+    <a href="/dashboard" class="nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+      </svg>
+      Dashboard
+    </a>
+
+    <a href="/upload" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/>
+        <line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+      Upload Resumes
+    </a>
+
+    <a href="/candidates" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      Candidates
+      <span class="nav-badge">{{ total_candidates }}</span>
+    </a>
+
+    <div class="nav-section-label" style="margin-top:8px;">Analysis</div>
+
+    <a href="/rankings" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+      Rankings
+    </a>
+
+    <a href="/analytics" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"/>
+        <line x1="12" y1="20" x2="12" y2="4"/>
+        <line x1="6"  y1="20" x2="6"  y2="14"/>
+      </svg>
+      Analytics
+    </a>
+
+    <a href="/job-roles" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </svg>
+      Job Roles
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-card">
+      <div class="user-av">{{ user_initials }}</div>
+      <div>
+        <div class="user-name">{{ user_name }}</div>
+        <div class="user-email">{{ user_email }}</div>
+      </div>
+    </div>
+    <form method="GET" action="/logout">
+      <button type="submit" class="btn-logout">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Sign Out
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     MAIN CONTENT
+══════════════════════════ -->
+<div class="main">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <h1>Dashboard</h1>
+      <p>Welcome back, {{ user_name }}. Here's what's happening today.</p>
+    </div>
+    <div class="topbar-right">
+      <div class="search-box">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" placeholder="Search candidates..."/>
+      </div>
+      <a href="/upload" class="btn-upload">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        Upload Resume
+      </a>
+    </div>
+  </div>
+
+  <!-- Flash messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <span class="stat-change up">+12%</span>
+      </div>
+      <div class="stat-value">{{ total_resumes }}</div>
+      <div class="stat-label">Total Resumes</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <polyline points="16 11 18 13 22 9"/>
+          </svg>
+        </div>
+        <span class="stat-change up">+5%</span>
+      </div>
+      <div class="stat-value">{{ shortlisted }}</div>
+      <div class="stat-label">Shortlisted</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <span class="stat-change up">+2</span>
+      </div>
+      <div class="stat-value">{{ active_roles }}</div>
+      <div class="stat-label">Active Job Roles</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <span class="stat-change up">+3%</span>
+      </div>
+      <div class="stat-value">{{ avg_score }}%</div>
+      <div class="stat-label">Avg Match Score</div>
+    </div>
+  </div>
+
+  <!-- Content grid -->
+  <div class="content-grid">
+
+    <!-- Recent Candidates Table -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Recent Candidates
+        </div>
+        <a href="/candidates" class="panel-action">View all</a>
+      </div>
+
+      <div class="table-wrap">
+        {% if candidates %}
+        <table>
+          <thead>
+            <tr>
+              <th>Candidate</th>
+              <th>Job Role</th>
+              <th>Match Score</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in candidates %}
+            <tr onclick="window.location='/candidate/{{ c.id }}'">
+              <td>
+                <div class="candidate-info">
+                  <div class="cand-av">{{ c.initials }}</div>
+                  <div>
+                    <div class="cand-name">{{ c.name }}</div>
+                    <div class="cand-email">{{ c.email }}</div>
+                  </div>
+                </div>
+              </td>
+              <td style="color:var(--text-mid);font-size:12.5px;">{{ c.job_role }}</td>
+              <td>
+                <div class="score-wrap">
+                  <div class="score-bar">
+                    <div class="score-fill {{ 'high' if c.score >= 70 else ('mid' if c.score >= 40 else 'low') }}"
+                         style="width:{{ c.score }}%"></div>
+                  </div>
+                  <span class="score-num">{{ c.score }}%</span>
+                </div>
+              </td>
+              <td>
+                <span class="badge {{ c.status_class }}">
+                  <span class="badge-dot"></span>
+                  {{ c.status }}
+                </span>
+              </td>
+              <td style="color:var(--text-light);font-size:12px;">{{ c.date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          <p>No resumes uploaded yet</p>
+          <small>Upload your first resume to get started</small>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Right column -->
+    <div class="right-col">
+
+      <!-- Active Job Roles -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            Active Job Roles
+          </div>
+          <a href="/job-roles" class="panel-action">Manage</a>
+        </div>
+
+        {% if job_roles %}
+          {% for job in job_roles %}
+          <div class="job-item">
+            <div class="job-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <div>
+              <div class="job-title">{{ job.title }}</div>
+              <div class="job-count">{{ job.applicants }} applicants</div>
+            </div>
+            <div class="job-right">
+              <div class="job-score">{{ job.top_score }}%</div>
+              <div class="job-label">top match</div>
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="empty-state" style="padding:24px;">
+            <p>No active job roles</p>
+            <small>Add job roles to start screening</small>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Recent Activity
+          </div>
+        </div>
+
+        {% if activities %}
+          {% for act in activities %}
+          <div class="activity-item">
+            <div class="act-dot {{ act.color }}"></div>
+            <div>
+              <div class="act-text">{{ act.text }}</div>
+              <div class="act-time">{{ act.time }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="empty-state" style="padding:24px;">
+            <p>No recent activity</p>
+            <small>Activity will appear here</small>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
